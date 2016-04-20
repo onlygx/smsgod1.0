@@ -8,9 +8,8 @@ import java.util.Map;
 
 public class Main {
 
-    public static Map<String,SmsUrl> smsUrlMap = DbUtils.findForFile();
-    public static String phone = "1836";
-
+    public static Map<String,SmsUrl> smsUrlMap = HttpUtil.smsUrlMap;
+    public static String phone = "18660132803";
 
     public static void main(String[] args) throws IOException {
 
