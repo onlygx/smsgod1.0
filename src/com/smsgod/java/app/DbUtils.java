@@ -1,7 +1,7 @@
 package com.smsgod.java.app;
 
+import com.smsgod.java.util.UrlUtil;
 import java.io.*;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -10,27 +10,37 @@ import java.util.Map;
 public class DbUtils {
 
     public static void main(String[] args) {
-        Map<String,SmsUrl> mapTest = new HashMap<>();
-        SmsUrl su = new SmsUrl();
-        su.setTitle("第一个");
-        mapTest.put("1",su);
+        // 初始化程序 - 加载url列表
+        init();
 
-        save(mapTest);
-
-
-        Map<String,SmsUrl> mapdata = getAll();
-        System.out.printf(mapdata.get("1").getTitle());
+        Map<String,SmsUrl> mapdata = findForFile();
+        System.out.printf("初始成功，获取到："+mapdata.size()+" 条。");
     }
 
+    /**
+     * 初始化所有数据
+     */
+    private static void init(){
+        Map<String,SmsUrl> urlMap = UrlUtil.smsUrls;
+        saveToFile(urlMap);
+    }
 
-    private static void addOne(String index,SmsUrl smsUrl){
-        Map<String,SmsUrl> mapdata = getAll();
+    /**
+     * 添加一条数据
+     * @param index
+     * @param smsUrl
+     */
+    public static void addOne(String index,SmsUrl smsUrl){
+        Map<String,SmsUrl> mapdata = findForFile();
         mapdata.put(index,smsUrl);
-        save(mapdata);
+        saveToFile(mapdata);
     }
 
-
-    private static void save(Map<String,SmsUrl> mapData){
+    /**
+     * 添加对象到文件
+     * @param mapData
+     */
+    private static void saveToFile(Map<String,SmsUrl> mapData){
 
         File file =new File("url.dat");
         FileOutputStream out;
@@ -47,7 +57,11 @@ public class DbUtils {
         }
     }
 
-    private static Map<String,SmsUrl> getAll(){
+    /**
+     * 从文件解析对象
+     * @return
+     */
+    public static Map<String,SmsUrl> findForFile(){
 
         Object temp=null;
         File file =new File("url.dat");
