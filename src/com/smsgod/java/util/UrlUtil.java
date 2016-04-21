@@ -77,12 +77,18 @@ public class UrlUtil {
                 "Cookie: JSESSIONID=677824332221E45407850E1DAF418ECF; _ga=GA1.2.1785343619.1461147728; _gat=1; Hm_lvt_5d1e0fb881f6319b25d56372b8fd452c=1461147728; Hm_lpvt_5d1e0fb881f6319b25d56372b8fd452c=1461147728" ,
                 ""));
 
+
         put("9",new SmsUrl("",
                 "post",
                 "" ,
                 ""));
 
         put("10",new SmsUrl("",
+                "post",
+                "" ,
+                ""));
+
+        put("11",new SmsUrl("",
                 "post",
                 "" ,
                 ""));

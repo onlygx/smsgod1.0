@@ -15,7 +15,7 @@ public class Main {
 
         CloseableHttpClient httpclient = HttpClients.createDefault();
         // 初始化 测试数据
-        String i = "7";
+        String i = "8";
         SmsUrl smsUrl = smsUrlMap.get(i);
         String url = smsUrl.getUrl();
         if("".equals(url)){

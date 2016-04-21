@@ -53,9 +53,10 @@ public class SmsUrl implements Serializable {
                     bnv = new BasicNameValuePair(nvp.getName(),value.replace("{phone}",phone));
                     params.remove(nvp);
                     params.add(bnv);
+                    System.out.println("成功替换参数{phone}："+bnv.getValue());
                     break;
                 }
-                System.out.println("成功替换参数{phone}："+bnv.getValue());
+
             }
             urlEncodedFormEntity = new UrlEncodedFormEntity(this.params);
         } catch (Exception e) {
