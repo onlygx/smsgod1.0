@@ -1,5 +1,6 @@
-package com.smsgod.java.app;
+package com.smsgod.java.util;
 
+import com.smsgod.java.app.SmsUrl;
 import com.smsgod.java.util.UrlUtil;
 import java.io.*;
 import java.util.Map;
@@ -42,7 +43,7 @@ public class DbUtils {
      */
     private static void saveToFile(Map<String,SmsUrl> mapData){
 
-        File file =new File("url.dat");
+        File file = new File("url.dat");
         FileOutputStream out;
         try {
             out = new FileOutputStream(file);
@@ -63,8 +64,8 @@ public class DbUtils {
      */
     public static Map<String,SmsUrl> findForFile(){
 
-        Object temp=null;
-        File file =new File("url.dat");
+        Object temp = null;
+        File file = new File("url.dat");
         FileInputStream in;
         try {
             in = new FileInputStream(file);

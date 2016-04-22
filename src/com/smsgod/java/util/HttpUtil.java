@@ -1,6 +1,5 @@
 package com.smsgod.java.util;
 
-import com.smsgod.java.app.DbUtils;
 import com.smsgod.java.app.SmsUrl;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;

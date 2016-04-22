@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.smsgod.java.ui.MainPage">
-  <grid id="27dc6" binding="index1" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-    <margin top="0" left="0" bottom="10" right="0"/>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.smsgod.java.ui.JPContent1">
+  <grid id="27dc6" binding="JP1" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="512" height="340"/>
+      <xy x="20" y="20" width="500" height="400"/>
     </constraints>
-    <properties>
-      <toolTipText value=""/>
-    </properties>
+    <properties/>
     <border type="none"/>
     <children>
-      <grid id="650b9" binding="jpContent1" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
+      <grid id="f2c82" binding="jpContent1" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="10" right="0"/>
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="b7bec" layout-manager="GridLayoutManager" row-count="3" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="10da9" binding="jptext" layout-manager="GridLayoutManager" row-count="3" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -26,7 +24,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="ed312" class="javax.swing.JLabel" binding="lb1">
+              <component id="1afeb" class="javax.swing.JLabel" binding="lb1">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -34,7 +32,7 @@
                   <text value="手机号："/>
                 </properties>
               </component>
-              <component id="d8e69" class="javax.swing.JTextField" binding="phoneNumber">
+              <component id="7e40b" class="javax.swing.JTextField" binding="phoneNumber">
                 <constraints>
                   <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -42,7 +40,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="8938a" class="javax.swing.JLabel" binding="lb2">
+              <component id="a1d0" class="javax.swing.JLabel" binding="lb2">
                 <constraints>
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -50,7 +48,7 @@
                   <text value="持续时间（秒）："/>
                 </properties>
               </component>
-              <component id="d80d6" class="javax.swing.JTextField" binding="chixuTime">
+              <component id="b5e48" class="javax.swing.JTextField" binding="chixuTime">
                 <constraints>
                   <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -58,27 +56,27 @@
                 </constraints>
                 <properties/>
               </component>
-              <hspacer id="421ef">
+              <hspacer id="9ed95">
                 <constraints>
                   <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
-              <hspacer id="6f477">
+              <hspacer id="4fe4c">
                 <constraints>
                   <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
-              <hspacer id="7f5bd">
+              <hspacer id="efb58">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
-              <hspacer id="f852b">
+              <hspacer id="84c8e">
                 <constraints>
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
-              <component id="f6bf6" class="javax.swing.JLabel" binding="lb4">
+              <component id="7aa07" class="javax.swing.JLabel" binding="lb4">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -86,7 +84,7 @@
                   <text value="间隔（秒）："/>
                 </properties>
               </component>
-              <component id="ac4fe" class="javax.swing.JTextField" binding="jiangeTime">
+              <component id="ada22" class="javax.swing.JTextField" binding="jiangeTime">
                 <constraints>
                   <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -94,9 +92,19 @@
                 </constraints>
                 <properties/>
               </component>
+              <hspacer id="b22e6">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <hspacer id="1db">
+                <constraints>
+                  <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
             </children>
           </grid>
-          <grid id="ee71e" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="44422" binding="jpctrl" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="20" bottom="0" right="20"/>
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="true"/>
@@ -104,7 +112,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="4a49c" class="javax.swing.JButton" binding="btBegin">
+              <component id="422bf" class="javax.swing.JButton" binding="btBegin">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -112,7 +120,7 @@
                   <text value="开始/暂停"/>
                 </properties>
               </component>
-              <component id="10daa" class="javax.swing.JButton" binding="btStop">
+              <component id="f0215" class="javax.swing.JButton" binding="btStop">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -122,7 +130,7 @@
               </component>
             </children>
           </grid>
-          <grid id="ed4d3" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="6b5d8" binding="jplabel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="20" bottom="0" right="0"/>
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="true"/>
@@ -130,7 +138,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="f681e" class="javax.swing.JLabel" binding="lb3">
+              <component id="b89ab" class="javax.swing.JLabel" binding="lb3">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -140,45 +148,6 @@
               </component>
             </children>
           </grid>
-        </children>
-      </grid>
-      <grid id="4dcb" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="true"/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children>
-          <toolbar id="46e71">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="-1" height="20"/>
-              </grid>
-            </constraints>
-            <properties/>
-            <border type="none"/>
-            <children>
-              <component id="3f7a0" class="javax.swing.JButton" binding="bt1">
-                <constraints/>
-                <properties>
-                  <text value="首页"/>
-                </properties>
-              </component>
-              <component id="8c6a4" class="javax.swing.JButton" binding="bt2">
-                <constraints/>
-                <properties>
-                  <text value="添加"/>
-                </properties>
-              </component>
-              <component id="2f5fc" class="javax.swing.JButton" binding="bt3">
-                <constraints/>
-                <properties>
-                  <text value="资源列表"/>
-                </properties>
-              </component>
-            </children>
-          </toolbar>
         </children>
       </grid>
     </children>
