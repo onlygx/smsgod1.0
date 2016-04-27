@@ -16,15 +16,14 @@ public class JPContent1 extends JPanel{
     private JLabel lb1;
     private JTextField phoneNumber;
     private JLabel lb2;
-    private JTextField chixuTime;
     private JLabel lb4;
-    private JTextField jiangeTime;
     private JPanel jpctrl;
     private JButton btBegin;
     private JButton btStop;
     private JPanel jplabel;
     private JLabel lb3;
-
+    private JComboBox time;
+    private JSpinner spinner1;
 
 
     public JPContent1(){
