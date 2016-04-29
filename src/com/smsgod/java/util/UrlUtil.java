@@ -78,7 +78,7 @@ public class UrlUtil {
                 ""));
 
 
-        put("9",new SmsUrl("",
+      /*  put("9",new SmsUrl("",
                 "post",
                 "" ,
                 ""));
@@ -91,7 +91,7 @@ public class UrlUtil {
         put("11",new SmsUrl("",
                 "post",
                 "" ,
-                ""));
+                ""));*/
 
 
     }};

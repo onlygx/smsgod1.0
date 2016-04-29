@@ -28,11 +28,12 @@ public class DbUtils {
 
     /**
      * 添加一条数据
-     * @param index
      * @param smsUrl
      */
-    public static void addOne(String index,SmsUrl smsUrl){
+    public static void addOne(SmsUrl smsUrl){
         Map<String,SmsUrl> mapdata = findForFile();
+        String index = ""+mapdata.size();
+        System.out.println("添加到编号：" + index);
         mapdata.put(index,smsUrl);
         saveToFile(mapdata);
     }

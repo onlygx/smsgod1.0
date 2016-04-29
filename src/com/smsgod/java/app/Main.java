@@ -13,7 +13,6 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        CloseableHttpClient httpclient = HttpClients.createDefault();
         // 初始化 测试数据
         String i = "8";
         SmsUrl smsUrl = smsUrlMap.get(i);
@@ -24,9 +23,9 @@ public class Main {
         }
         String method = smsUrl.getMethod();
         if("post".equals(method)){
-            HttpUtil.post(httpclient,smsUrl,phone);
+            HttpUtil.post(smsUrl,phone);
         }else{
-            HttpUtil.get(httpclient,smsUrl,phone);
+            HttpUtil.get(smsUrl,phone);
         }
     }
 }

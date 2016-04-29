@@ -17,10 +17,6 @@ public class IndexPanel extends JComponent{
     private JToolBar toolbar;
     private JButton bt1;
     private JButton bt2;
-    private JButton bt3;
-    private JPanel jp4;
-    private JLabel lbtempshow;
-
     private JPContent1 jpContent1;
     private JPContent2 jpContent2;
     private JPanel jp1;
@@ -31,24 +27,20 @@ public class IndexPanel extends JComponent{
         //super();
         System.out.println("JPanel 构造...");
 
-        jp1.setVisible(false);
+        jp1.setVisible(true);
         jp2.setVisible(false);
         bt1.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.lightBlue));
         bt2.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.lightBlue));
-        bt3.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.lightBlue));
 
         // 首页按钮
         bt1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("首页测试开始...~~");
                 try {
                     show1();
                 } catch (Exception e1) {
                     e1.printStackTrace();
-                    System.out.println("首页测试失败！！");
                 }
-                System.out.println("首页测试完成。");
             }
         });
 
@@ -56,12 +48,10 @@ public class IndexPanel extends JComponent{
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    System.out.println("添加测试开始...");
                     show2();
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
-                System.out.println("添加测试结束。");
             }
         });
     }
@@ -69,7 +59,6 @@ public class IndexPanel extends JComponent{
     private void hideAll(){
         jp1.setVisible(false);
         jp2.setVisible(false);
-        jp4.setVisible(false);
     }
     private void show1(){
         hideAll();
@@ -79,10 +68,7 @@ public class IndexPanel extends JComponent{
         hideAll();
         jp2.setVisible(true);
     }
-    private void show4(){
-        hideAll();
-        jp4.setVisible(true);
-    }
+
 
     public JPanel getJpIndex() {
         return jpIndex;

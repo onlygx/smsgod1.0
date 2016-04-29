@@ -13,6 +13,7 @@ public class Start {
         System.out.println("项目启动中...");
         try
         {
+            System.setProperty("sun.java2d.noddraw", "true");
             //设置本属性将改变窗口边框样式定义
             BeautyEyeLNFHelper.frameBorderStyle = BeautyEyeLNFHelper.FrameBorderStyle.translucencyAppleLike;
             //隐藏设置按钮

@@ -3,6 +3,7 @@ package com.smsgod.java.util;
 import com.smsgod.java.app.SmsUrl;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -18,10 +19,12 @@ import java.util.Map;
 public class HttpUtil {
 
     public static Map<String,SmsUrl> smsUrlMap = DbUtils.findForFile();
+    // 创建HttpClient实例
+    public static CloseableHttpClient httpclient = HttpClients.createDefault();
 
     public static void BeginSms(String phone) throws IOException {
-        // 创建HttpClient实例
-        CloseableHttpClient httpclient = HttpClients.createDefault();
+
+
         // 创建Get方法实例
         for(int i = 1 ;i <= smsUrlMap.size() ; i++){
 
@@ -34,9 +37,9 @@ public class HttpUtil {
                 }
                 String method = smsUrl.getMethod();
                 if("post".equals(method)){
-                    post(httpclient,smsUrl,phone);
+                    post(smsUrl,phone);
                 }else{
-                    get(httpclient,smsUrl,phone);
+                    get(smsUrl,phone);
                 }
 
             } catch (Exception e) {
@@ -47,7 +50,7 @@ public class HttpUtil {
     }
 
 
-    public static void post(CloseableHttpClient httpclient,SmsUrl smsUrl,String phone) throws IOException {
+    public static String post(SmsUrl smsUrl,String phone) throws IOException {
 
         String url = smsUrl.getUrl().replace("{phone}",phone);
         String method = smsUrl.getMethod();
@@ -55,7 +58,8 @@ public class HttpUtil {
         UrlEncodedFormEntity params = smsUrl.getFromEntity(phone);
 
         HttpPost httpPost = new HttpPost(url);
-
+        RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(2000).setConnectTimeout(2000).build();//设置请求和传输超时时间
+        httpPost.setConfig(requestConfig);
         // 判断并添加 Header
         if(headers != null && headers.length > 0){
             httpPost.setHeaders(headers);
@@ -73,11 +77,12 @@ public class HttpUtil {
 
         //提交开始
         CloseableHttpResponse response = httpclient.execute(httpPost);
-        HttpUtil.printResponse(response);
+        String resoult = HttpUtil.printResponse(response);
         httpPost.abort();
+        return resoult;
     }
 
-    public static void get(CloseableHttpClient httpclient,SmsUrl smsUrl,String phone) throws IOException {
+    public static String get(SmsUrl smsUrl,String phone) throws IOException {
 
         String url = smsUrl.getUrl().replace("{phone}",phone);
         String method = smsUrl.getMethod();
@@ -85,7 +90,8 @@ public class HttpUtil {
         UrlEncodedFormEntity params = smsUrl.getFromEntity(phone);
 
         HttpGet httpGet = new HttpGet(url);
-
+        RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(2000).setConnectTimeout(2000).build();//设置请求和传输超时时间
+        httpGet.setConfig(requestConfig);
         // 判断并添加 Header
         if(headers.length > 0){
             httpGet.setHeaders(headers);
@@ -97,8 +103,9 @@ public class HttpUtil {
 
         //提交开始
         CloseableHttpResponse response = httpclient.execute(httpGet);
-        HttpUtil.printResponse(response);
+        String resoult = HttpUtil.printResponse(response);
         httpGet.abort();
+        return resoult;
     }
 
     /**
@@ -106,16 +113,19 @@ public class HttpUtil {
      * @param response
      * @throws IOException
      */
-    public static void printResponse(CloseableHttpResponse response) throws IOException {
+    public static String printResponse(CloseableHttpResponse response) throws IOException {
         HttpEntity entity = response.getEntity();
+        String resoult = "";
         if (entity != null) {
             InputStream instreams = entity.getContent();
             String str = HttpUtil.convertStreamToString(instreams);
             System.out.println("============= begin =============");
+            resoult = str;
             System.out.println(str);
             System.out.println("============= end =============");
 
         }
+        return resoult;
     }
 
     public static String convertStreamToString(InputStream is) {
