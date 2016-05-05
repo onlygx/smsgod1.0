@@ -1,16 +1,13 @@
 package com.smsgod.java.ui;
 
-import com.smsgod.java.util.MyThread;
 import com.smsgod.java.util.ReadThread;
-import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Created by GaoXiang on 2016/4/22 0022.
+ *
  */
 public class JPContent1 extends JPanel{
 

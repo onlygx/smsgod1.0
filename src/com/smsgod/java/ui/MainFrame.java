@@ -3,7 +3,7 @@ package com.smsgod.java.ui;
 import javax.swing.*;
 
 /**
- * Created by GaoXiang on 2016/4/21 0021.
+ *
  */
 public class MainFrame extends  JFrame{
 

@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.util.Map;
 
 /**
- * Created by GaoXiang on 2016/4/22 0022.
+ *
  */
 public class IndexPanel extends JComponent{
 

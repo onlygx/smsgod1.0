@@ -5,7 +5,7 @@ import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 import javax.swing.*;
 
 /**
- * Created by GaoXiang on 2016/4/22 0022.
+ *
  */
 public class Start {
 

@@ -3,7 +3,7 @@ package com.smsgod.java.ui;
 import javax.swing.*;
 
 /**
- * Created by GaoXiang on 2016/4/29 0029.
+ *
  */
 public class JPContent3 {
     private JPanel JP1;

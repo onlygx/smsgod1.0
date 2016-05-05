@@ -16,7 +16,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
 /**
- * Created by GaoXiang on 2016/4/22 0022.
+ *
  */
 public class JPContent2 extends JPanel {
     private JPanel JP1;
