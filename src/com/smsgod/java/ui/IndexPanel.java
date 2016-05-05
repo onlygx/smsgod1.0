@@ -1,11 +1,14 @@
 package com.smsgod.java.ui;
 
+import com.smsgod.java.app.SmsUrl;
+import com.smsgod.java.util.DbUtils;
 import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Map;
 
 /**
  * Created by GaoXiang on 2016/4/22 0022.
@@ -21,6 +24,7 @@ public class IndexPanel extends JComponent{
     private JPContent2 jpContent2;
     private JPanel jp1;
     private JPanel jp2;
+    private JButton btTest;
 
 
     public IndexPanel() {
@@ -49,6 +53,22 @@ public class IndexPanel extends JComponent{
             public void actionPerformed(ActionEvent e) {
                 try {
                     show2();
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+
+        btTest.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Map<String,SmsUrl> mapdata = DbUtils.findForFile();
+                    System.out.println("当前总数："+mapdata.size());
+                    System.out.println("所有URL如下：");
+                    for(SmsUrl smsUrl : mapdata.values()){
+                        System.out.println(smsUrl.getUrl());
+                    }
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }

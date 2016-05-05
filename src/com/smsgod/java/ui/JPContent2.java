@@ -105,7 +105,14 @@ public class JPContent2 extends JPanel {
                     System.out.println("地址和手机号不能为空！");
                     return;
                 }
+                smsUrl = new SmsUrl(url.getText(),"",header.getText(),paramBody.getText());
+                if (rPost.isSelected()) {
+                    smsUrl.setMethod("post");
+                } else {
+                    smsUrl.setMethod("get");
+                }
                 DbUtils.addOne(smsUrl);
+
                 url.setText("");
                 header.setText("");
                 paramBody.setText("");
@@ -114,8 +121,8 @@ public class JPContent2 extends JPanel {
                 Map<String, SmsUrl> map = DbUtils.findForFile();
 
                 int index = map.size()-1;
-                System.out.println("获取序号：" + index);
-                System.out.println(map.get(index+""));
+                System.out.println("新序号：" + index);
+                System.out.println(map.get(index+"").getUrl());
             }
         });
     }

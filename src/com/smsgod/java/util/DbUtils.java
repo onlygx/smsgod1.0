@@ -3,6 +3,8 @@ package com.smsgod.java.util;
 import com.smsgod.java.app.SmsUrl;
 import com.smsgod.java.util.UrlUtil;
 import java.io.*;
+import java.net.URL;
+import java.net.URLDecoder;
 import java.util.Map;
 
 /**
@@ -43,8 +45,8 @@ public class DbUtils {
      * @param mapData
      */
     private static void saveToFile(Map<String,SmsUrl> mapData){
-
-        File file = new File("url.dat");
+        String filePath = getPath()+"\\url.dat";
+        File file = new File(filePath);
         FileOutputStream out;
         try {
             out = new FileOutputStream(file);
@@ -66,7 +68,13 @@ public class DbUtils {
     public static Map<String,SmsUrl> findForFile(){
 
         Object temp = null;
-        File file = new File("url.dat");
+        String filePath = getPath()+"\\url.dat";
+        File file = new File(filePath);
+        if(!file.exists()){
+            Map<String,SmsUrl> urlMap = UrlUtil.smsUrls;
+            saveToFile(urlMap);
+        }
+        file = new File(filePath);
         FileInputStream in;
         try {
             in = new FileInputStream(file);
@@ -81,5 +89,30 @@ public class DbUtils {
             e.printStackTrace();
         }
         return (Map<String,SmsUrl>)temp;
+    }
+
+    public static String getPath(){
+        URL url = DbUtils.class.getProtectionDomain().getCodeSource().getLocation();
+        String filePath = null;
+        try {
+            filePath = URLDecoder.decode(url.getPath(), "utf-8");// 转化为utf-8编码
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (filePath.endsWith(".jar")) {// 可执行jar包运行的结果里包含".jar"
+            // 截取路径中的jar包名
+            filePath = filePath.substring(0, filePath.lastIndexOf("/") + 1);
+        }
+
+        File file = new File(filePath);
+
+        // /If this abstract pathname is already absolute, then the pathname
+        // string is simply returned as if by the getPath method. If this
+        // abstract pathname is the empty abstract pathname then the pathname
+        // string of the current user directory, which is named by the system
+        // property user.dir, is returned.
+        filePath = file.getAbsolutePath();//得到windows下的正确路径
+        System.out.println(filePath);
+        return filePath;
     }
 }
