@@ -9,12 +9,12 @@ import java.util.Map;
 public class Main {
 
     public static Map<String,SmsUrl> smsUrlMap = HttpUtil.smsUrlMap;
-    public static String phone = "";
+    public static String phone = "18660132803";
 
     public static void main(String[] args) throws IOException {
 
         // 初始化 测试数据
-        String i = "8";
+        String i = "9";
         SmsUrl smsUrl = smsUrlMap.get(i);
         String url = smsUrl.getUrl();
         if("".equals(url)){

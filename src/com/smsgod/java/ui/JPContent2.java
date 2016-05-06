@@ -30,9 +30,8 @@ public class JPContent2 extends JPanel {
     private JPanel c2;
     private JTextField url;
     private JLabel l2;
-    private JLabel l3;
     private JPanel cm1;
-    private JTextField header;
+    private JTextArea headers;
     private JTextField paramBody;
     private JTextField resoult;
     private JLabel lbresoult;
@@ -40,6 +39,8 @@ public class JPContent2 extends JPanel {
     private JTextField phone;
     private JLabel lbshow;
     private JPanel lbp;
+
+    private JLabel l31;
 
     SmsUrl smsUrl = new SmsUrl();
 
@@ -49,6 +50,7 @@ public class JPContent2 extends JPanel {
         buttonGroup.add(rPost);
         buttonGroup.add(rGet);
 
+        //headers.setSize(-1,50);
         try {
             test.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.green));
             add.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.red));
@@ -71,11 +73,11 @@ public class JPContent2 extends JPanel {
                     System.out.println("提交方式：GET");
                 }
                 System.out.println("url:" + url.getText() + ";");
-                System.out.println("header:" + header.getText() + ";");
+                System.out.println("header:" + headers.getText() + ";");
                 System.out.println("param:" + paramBody.getText() + ";");
 
                 smsUrl.setUrl(url.getText());
-                smsUrl.setHeaders(UrlUtil.StringToHeaders(header.getText()));
+                smsUrl.setHeaders(UrlUtil.StringToHeaders(headers.getText()));
                 try {
                     smsUrl.setParams(UrlUtil.StringToFormList(paramBody.getText()));
                 } catch (UnsupportedEncodingException e1) {
@@ -105,7 +107,7 @@ public class JPContent2 extends JPanel {
                     System.out.println("地址和手机号不能为空！");
                     return;
                 }
-                smsUrl = new SmsUrl(url.getText(),"",header.getText(),paramBody.getText());
+                smsUrl = new SmsUrl(url.getText(),"",headers.getText(),paramBody.getText());
                 if (rPost.isSelected()) {
                     smsUrl.setMethod("post");
                 } else {
@@ -114,7 +116,7 @@ public class JPContent2 extends JPanel {
                 DbUtils.addOne(smsUrl);
 
                 url.setText("");
-                header.setText("");
+                headers.setText("");
                 paramBody.setText("");
                 resoult.setText("");
 
