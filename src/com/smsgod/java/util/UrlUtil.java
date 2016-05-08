@@ -80,19 +80,14 @@ public class UrlUtil {
 
         put("9",new SmsUrl("http://www.zhibo366.com/duanxin.ashx?type=sendmsg",
                 "post",
-                "Host: www.zhibo366.com\n" +
-                "Accept: */*\n" +
-                "Origin: http://www.zhibo366.com\n" +
-                "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36\n" +
-                "Referer: http://www.zhibo366.com/register.aspx\n" +
-                "Cookie: ASP.NET_SessionId=5r4d4hh0cr1t44wi1hoxbmht; zb366_username=%e6%b8%b8%e5%ae%a218555; zb366_pwd=; Hm_lvt_6114ce73ef5b110e9651d361385777cb=1462501452; Hm_lpvt_6114ce73ef5b110e9651d361385777cb=1462501452; CNZZDATA1258391129=707763032-1462497379-%7C1462497379; IESESSION=alive; pgv_pvi=3501233152; pgv_si=s7580205056; tencentSig=8901875712; Hm_lvt_675b286ccf234be4a7e4954ff3639c75=1462501486; Hm_lpvt_675b286ccf234be4a7e4954ff3639c75=1462501486" ,
+                "",
                 "telephone={phone}"));
 
-       /* put("10",new SmsUrl("",
+        put("10",new SmsUrl("http://www.ycjf111.com/Web/API/GetCode.ashx",
                 "post",
                 "" ,
-                ""));
-
+                "method=getCode&phone={phone}"));
+/*
         put("11",new SmsUrl("",
                 "post",
                 "" ,

@@ -4,10 +4,7 @@ import com.smsgod.java.app.SmsUrl;
 import com.smsgod.java.util.DbUtils;
 import com.smsgod.java.util.HttpUtil;
 import com.smsgod.java.util.UrlUtil;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
 import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -61,7 +58,7 @@ public class JPContent2 extends JPanel {
         test.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if ("".equals(url.getText()) || "".equals(phone.getText())) {
+                if ("".equals(url.getText().trim()) || "".equals(phone.getText())) {
                     System.out.println("地址和手机号不能为空！");
                     return;
                 }
@@ -103,11 +100,11 @@ public class JPContent2 extends JPanel {
         add.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if ("".equals(url.getText()) || "".equals(phone.getText())) {
+                if ("".equals(url.getText().trim()) || "".equals(phone.getText())) {
                     System.out.println("地址和手机号不能为空！");
                     return;
                 }
-                smsUrl = new SmsUrl(url.getText(),"",headers.getText(),paramBody.getText());
+                smsUrl = new SmsUrl(url.getText().trim(),"",headers.getText(),paramBody.getText());
                 if (rPost.isSelected()) {
                     smsUrl.setMethod("post");
                 } else {
