@@ -9,7 +9,7 @@ import java.util.Map;
 public class Main {
 
     public static Map<String,SmsUrl> smsUrlMap = HttpUtil.smsUrlMap;
-    public static String phone = "18660132803";
+    public static String phone = "";
 
     public static void main(String[] args) throws IOException {
 
